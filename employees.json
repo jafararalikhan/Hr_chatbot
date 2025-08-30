@@ -1,0 +1,124 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "skills": ["Python", "React", "AWS"],
+      "experience_years": 5,
+      "projects": ["E-commerce Platform", "Healthcare Dashboard"],
+      "availability": "available"
+    },
+    {
+      "id": 2,
+      "name": "Michael Rodriguez",
+      "skills": ["Python", "scikit-learn", "Pandas"],
+      "experience_years": 4,
+      "projects": ["Patient Risk Prediction System", "Data Migration"],
+      "availability": "not available"
+    },
+    {
+      "id": 3,
+      "name": "Dr. Sarah Chen",
+      "skills": ["TensorFlow", "PyTorch", "Medical Data"],
+      "experience_years": 6,
+      "projects": ["Medical Diagnosis Platform", "Clinical Analytics"],
+      "availability": "available"
+    },
+    {
+      "id": 4,
+      "name": "Priya Verma",
+      "skills": ["Java", "Spring", "React Native"],
+      "experience_years": 3,
+      "projects": ["Retail CRM App", "React Native Storefront"],
+      "availability": "available"
+    },
+    {
+      "id": 5,
+      "name": "Ashok Kumar",
+      "skills": ["AWS", "Docker", "Terraform"],
+      "experience_years": 5,
+      "projects": ["Cloud Migration", "DevOps Pipeline"],
+      "availability": "available"
+    },
+    {
+      "id": 6,
+      "name": "Sofia Garcia",
+      "skills": ["Python", "Pandas", "SQL"],
+      "experience_years": 2,
+      "projects": ["Sales Analytics", "HR Dashboard"],
+      "availability": "not available"
+    },
+    {
+      "id": 7,
+      "name": "Mark Lee",
+      "skills": ["Kotlin", "Android", "React Native"],
+      "experience_years": 4,
+      "projects": ["Fitness Tracker", "Mobile Wallet"],
+      "availability": "available"
+    },
+    {
+      "id": 8,
+      "name": "Hari Kiran",
+      "skills": ["Node.js", "Docker", "AWS"],
+      "experience_years": 4,
+      "projects": ["IoT Automation", "Serverless"],
+      "availability": "available"
+    },
+    {
+      "id": 9,
+      "name": "Nina Patel",
+      "skills": ["React", "TypeScript", "UI/UX"],
+      "experience_years": 6,
+      "projects": ["Education Portal", "Healthcare Dashboard"],
+      "availability": "available"
+    },
+    {
+      "id": 10,
+      "name": "Omar Farouk",
+      "skills": ["JavaScript", "AWS", "Serverless"],
+      "experience_years": 3,
+      "projects": ["E-commerce Platform", "Cloud Sync"],
+      "availability": "available"
+    },
+    {
+      "id": 11,
+      "name": "Fatima Noor",
+      "skills": ["Python", "Machine Learning", "TensorFlow"],
+      "experience_years": 5,
+      "projects": ["Healthcare Analytics", "ML Research"],
+      "availability": "not available"
+    },
+    {
+      "id": 12,
+      "name": "Rahul Singh",
+      "skills": ["Python", "Django", "AWS"],
+      "experience_years": 4,
+      "projects": ["Inventory Management", "Cloud Migration"],
+      "availability": "available"
+    },
+    {
+      "id": 13,
+      "name": "Tanya Lee",
+      "skills": ["React", "React Native", "Figma"],
+      "experience_years": 2,
+      "projects": ["Retail App", "UI Prototype"],
+      "availability": "available"
+    },
+    {
+      "id": 14,
+      "name": "David Kim",
+      "skills": ["Docker", "AWS", "CI/CD"],
+      "experience_years": 4,
+      "projects": ["DevOps Automation", "Cloud Migration"],
+      "availability": "not available"
+    },
+    {
+      "id": 15,
+      "name": "Meera Desai",
+      "skills": ["Python", "Git", "Flask"],
+      "experience_years": 3,
+      "projects": ["Healthcare Chatbot", "Data Wrangler"],
+      "availability": "available"
+    }
+  ]
+}
