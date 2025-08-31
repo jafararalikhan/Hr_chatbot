@@ -147,11 +147,6 @@ Visit `/docs` in your browser (i.e. [http://localhost:8000/docs](http://localhos
 
 ***
 
-## Demo
-
-_Add a link to your Streamlit Cloud or screenshots/GIF here, if available._
-
-***
 
 ## Project Structure
 
