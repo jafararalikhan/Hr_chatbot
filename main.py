@@ -9,8 +9,7 @@ from dotenv import load_dotenv
 
 # Load .env variables
 load_dotenv()
-HUGGINGFACE_API_KEY = os.getenv('HUGGINGFACE_API_KEY')
-assert HUGGINGFACE_API_KEY, "Missing your HuggingFace API key in .env!"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Load employee data
 with open("employees.json") as f:
@@ -37,20 +36,47 @@ def search_employees(query: str, top_k=3):
     results = [employees[i] for i in top_ids if sims[i] > 0.5]
     return results
 
+# def generate_response(prompt: str):
+    
+#     API_URL = "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
+#     headers = {"Authorization": f"Bearer {HUGGINGFACE_API_KEY}"}
+#     payload = {
+#         "inputs": prompt,
+#         "parameters": {"max_new_tokens": 180, "return_full_text": False}
+#     }
+#     response = requests.post(API_URL, headers=headers, json=payload)
+#     if response.status_code == 200:
+#         try:
+#             return response.json()[0]['generated_text']
+#         except Exception:
+#             return "Couldn't parse LLM response."
+#     return "Error from LLM API: " + response.text
+
+
 def generate_response(prompt: str):
-    API_URL = "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
-    headers = {"Authorization": f"Bearer {HUGGINGFACE_API_KEY}"}
+    # Use Gemini 1.5 Flash (update to gemini-2.5-flash-latest once available)
+    API_URL = (
+        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={GEMINI_API_KEY}"
+    )
+    headers = {"Content-Type": "application/json"}
     payload = {
-        "inputs": prompt,
-        "parameters": {"max_new_tokens": 180, "return_full_text": False}
+        "contents": [
+            {
+                "role": "user",
+                "parts": [{"text": prompt}]
+            }
+        ]
     }
     response = requests.post(API_URL, headers=headers, json=payload)
     if response.status_code == 200:
         try:
-            return response.json()[0]['generated_text']
+            # The output is found here in the API response
+            return response.json()["candidates"][0]["content"]["parts"][0]["text"]
         except Exception:
-            return "Couldn't parse LLM response."
-    return "Error from LLM API: " + response.text
+            return "Couldn't parse Gemini response."
+    else:
+        return f"Error from Gemini API: {response.status_code} {response.text}"
+
 
 @app.post("/chat")
 def chat(q: ChatQuery):
@@ -66,7 +92,11 @@ def chat(q: ChatQuery):
         f"Matching employees:\n{desc}\n"
         f"Write a friendly and professional HR recommendation explaining why each person fits."
     )
+    print("\n\nprompt:----\n")
+    print(prompt)
     answer = generate_response(prompt)
+    print("\n\nanswer:----\n")
+    print(answer)
     return {"answer": answer, "matches": matches}
 
 @app.get("/employees/search")
