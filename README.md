@@ -1,8 +1,3 @@
-Here is your complete **README.md** for the HR Resource Query Chatbot—**ready to copy-paste to your GitHub repo**.  
-Just update the `YOUR_GITHUB_USERNAME` and add screenshots/demo links if desired.
-
-***
-
 # HR Resource Query Chatbot
 
 ## Overview
