@@ -43,8 +43,8 @@ The system combines *semantic search* (embeddings) with *LLM-powered responses* 
 
 1. **Clone the repo:**
    ```sh
-   git clone https://github.com/YOUR_GITHUB_USERNAME/hr-resource-query-chatbot.git
-   cd hr-resource-query-chatbot
+   git clone https://github.com/jafararalikhan/Hr_chatbot.git
+   cd Hr_chatbot
    ```
 
 2. **Install requirements:**
